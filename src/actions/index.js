@@ -12,3 +12,9 @@ export const signOut = () => {
         type: SIGN_OUT
     };
 }
+
+export const timeChange = () => {
+    return  {
+        type: 'TIME_CHANGE'
+    };
+}
