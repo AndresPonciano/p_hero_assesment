@@ -1,17 +1,18 @@
 import React from 'react';
 import '../../node_modules/bulma/bulma.sass';
-import GoogleAuth from './GoogleAuth';
 import Header from './Header';
+import Home from './Home';
 
 function App() {
   return (
     <>
       <div>
         <Header/>
-        <GoogleAuth/>
+        <Home/>
       </div>
     </>
   );
+
 }
 
 export default App;
