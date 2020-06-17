@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SearchBar from '../containers/search_bar';
+import SearchList from './SearchList';
 
 class Home extends React.Component {
 
@@ -17,6 +18,7 @@ class Home extends React.Component {
                 <div>
                     something else
                     <SearchBar/>
+                    <SearchList/>
                 </div>
             )
         }
