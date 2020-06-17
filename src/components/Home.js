@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import SearchBar from '../containers/search_bar';
 
 class Home extends React.Component {
 
@@ -15,14 +16,13 @@ class Home extends React.Component {
             return(
                 <div>
                     something else
+                    <SearchBar/>
                 </div>
             )
         }
     }
 
     render() {
-        console.log('athome', this.props.isSignedIn);
-
         return (
             <>
                 {this.renderHome()}

@@ -1,14 +1,12 @@
 import React from 'react';
 import GoogleAuth from './GoogleAuth';
 import { connect } from 'react-redux';
-import moment from 'moment';
 import { timeChange } from '../actions';
 
 class Header extends React.Component {
     
     componentDidMount() {
         setInterval(() => {
-            console.log('why');
             this.onTimeChange();
         }, 1000);
     }

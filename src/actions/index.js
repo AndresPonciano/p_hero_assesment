@@ -1,5 +1,7 @@
 import { SIGN_IN, SIGN_OUT } from './types';
 
+const YT_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+
 export const signIn = (userId) => {
     return {
         type: SIGN_IN,
