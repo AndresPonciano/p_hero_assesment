@@ -861,27 +861,22 @@ const dummydata = {
 const dummydata2 = {"items": []};
 
 class SearchList extends Component {
-    constructor(props) {
-        super(props);
-
-        this.show = this.show.bind(this);
-    }
-
-    show () {
-        // console.log(dummydata2.items);
-        console.log(this.props.videos);
-        // console.log(typeof(this.props.videos[0]));
-    }
 
     renderVideo(videoData) {
 
         console.log(videoData);
 
         return(
-            <div>
-                <h1>---</h1>
-                <h1>{videoData.snippet.title}</h1>
-                <h1>---</h1>
+            <div className="box" key={videoData.id.videoId}>
+              <div className="media-left">
+                <figure className="is-64x64">
+                  <img src={videoData.snippet.thumbnails.default.url} alt="thumbnail"></img>
+                </figure>
+              </div>
+              
+                <h1 className="title">{videoData.snippet.title}</h1>
+                <h1 className="subtitle">{videoData.snippet.channelTitle}</h1>
+                <h1 className="subtitle">{videoData.snippet.description}</h1>                
             </div>
         )
     }
@@ -890,15 +885,8 @@ class SearchList extends Component {
 
         return(
             <>
-            <h1>hmm idk yet</h1>
-            <button onClick={this.show}>hello</button>
-
             <div>
-                {dummydata2.items.map(this.renderVideo)}
-            {/* {this.props.videos[0].items.map(this.renderVideo)} */}
             {this.props.videos[0].map(this.renderVideo)}
-
-
             {/* <iframe src='https://www.youtube.com/embed/fBYvHHT8fdE'
                 frameborder='0'
                 allow='autoplay; encrypted-media'
