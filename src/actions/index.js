@@ -27,7 +27,7 @@ export const timeChange = () => {
 }
 
 export function fetchVideos(searchFor) {
-    const url =  `https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&maxResults=25&q=${searchFor}&key=${YT_KEY}`;
+    const url =  `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${searchFor}&key=${YT_KEY}`;
 
     const request = axios.get(url);
 

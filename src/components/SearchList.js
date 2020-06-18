@@ -868,8 +868,8 @@ class SearchList extends Component {
     }
 
     show () {
-        console.log(dummydata2.items);
-        // console.log(this.props.videos[0]);
+        // console.log(dummydata2.items);
+        console.log(this.props.videos);
         // console.log(typeof(this.props.videos[0]));
     }
 
@@ -894,15 +894,17 @@ class SearchList extends Component {
             <button onClick={this.show}>hello</button>
 
             <div>
-                {/* {dummydata2.items.map(this.renderVideo)} */}
-            {this.props.videos.items.map(this.renderVideo)}
+                {dummydata2.items.map(this.renderVideo)}
+            {/* {this.props.videos[0].items.map(this.renderVideo)} */}
+            {this.props.videos[0].map(this.renderVideo)}
 
-            <iframe src='https://www.youtube.com/embed/fBYvHHT8fdE'
+
+            {/* <iframe src='https://www.youtube.com/embed/fBYvHHT8fdE'
                 frameborder='0'
                 allow='autoplay; encrypted-media'
                 allowfullscreen
                 title='video'
-            />
+            /> */}
             </div>
             </>
         )
