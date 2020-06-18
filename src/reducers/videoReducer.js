@@ -1,6 +1,6 @@
 
 
-export default function( state = [], action) {
+export default function( state = { "items": [] }, action) {
 
     switch (action.type) {
         case 'FETCH_VIDEOS':
