@@ -5,12 +5,9 @@ import { Link } from 'react-router-dom';
 class SearchList extends Component {
 
     renderVideo(videoData) {
-
-        console.log(videoData);
-
         return(
             <div className="box" key={videoData.id.videoId}>
-              <div className="media-left">
+              <div className="media-left" key={videoData.id.videoId}>
                 <figure className="is-64x64">
                   <img src={videoData.snippet.thumbnails.default.url} alt="thumbnail"></img>
                 </figure>

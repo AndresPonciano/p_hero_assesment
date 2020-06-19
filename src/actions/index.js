@@ -1,11 +1,8 @@
 import { SIGN_IN, SIGN_OUT } from './types';
 import axios from 'axios';
+import { databaseRef } from '../base';
 
 const YT_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
-// const thing = 'dogs';
-// const ROOT_URL = `https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&maxResults=25&q=${thing}&key=${YT_KEY}`;
-// const getUrl = 'https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&maxResults=25&q=' + thing + '&key=' + key;
-
 
 export const signIn = (userId) => {
     return {
@@ -35,4 +32,17 @@ export function fetchVideos(searchFor) {
         type: 'FETCH_VIDEOS',
         payload: request
     }
+}
+
+export const addData = (user, newData) =>  {
+    databaseRef.child(user).push().set(newData);
+}
+
+export const fetchData = () => {
+    databaseRef.on("value", snapshot => {
+        return {
+            type: 'FETCH_DATA',
+            payload: snapshot.val()
+        }
+    })
 }

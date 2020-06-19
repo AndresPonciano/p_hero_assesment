@@ -67,3 +67,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # p_hero_assesment
+
+issues found:
+    it seems userId becomes null if page is idle for too long
+    i get key prop must be unique warning even though I have a key prop
