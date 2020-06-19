@@ -6,11 +6,14 @@ import Navbar from './Navbar';
 class videoPlayer extends React.Component {
 
     render() {
+
+        console.log('in videoplayer', this.props.location.state.video.data);
+
         return(
             <>
                 <Header/>
                 <Navbar/>
-                <iframe src={`https://www.youtube.com/embed/${this.props.location.state.video.videoData.id.videoId}`}
+                <iframe src={`https://www.youtube.com/embed/${this.props.location.state.video.data.id.videoId}`}
                     style={{marginTop: 70, marginLeft: 450}}
                     width="600px"
                     height="400px"
@@ -20,7 +23,7 @@ class videoPlayer extends React.Component {
                     title='video'
                 />
                 <br/>
-                <AddVideo videoData={this.props.location.state.video.videoData}/>
+                <AddVideo videoData={this.props.location.state.video.data}/>
             </>
         )
     }
