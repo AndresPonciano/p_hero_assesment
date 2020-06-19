@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT } from './types';
+import { SIGN_IN, SIGN_OUT, TIME_CHANGE, FETCH_VIDEOS, FETCH_DATA } from './types';
 import axios from 'axios';
 import { databaseRef } from '../base';
 
@@ -19,7 +19,7 @@ export const signOut = () => {
 
 export const timeChange = () => {
     return  {
-        type: 'TIME_CHANGE'
+        type: TIME_CHANGE
     };
 }
 
@@ -29,7 +29,7 @@ export function fetchVideos(searchFor) {
     const request = axios.get(url);
 
     return {
-        type: 'FETCH_VIDEOS',
+        type: FETCH_VIDEOS,
         payload: request
     }
 }
@@ -42,7 +42,7 @@ export const addData = (user, newData) =>  {
 export const fetchData = (userId) => {
     return dispatch => {
         databaseRef.child(userId).on("value", snapshot => {
-            dispatch ({ type: 'FETCH_DATA', payload: snapshot.val()})
+            dispatch ({ type: FETCH_DATA, payload: snapshot.val()})
         })
     }
 }

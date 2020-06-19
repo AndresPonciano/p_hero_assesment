@@ -3,34 +3,36 @@ import { connect } from 'react-redux';
 import { fetchData } from '../actions';
 import _ from 'lodash';
 import SavedItem from './SavedItem';
+import Header from './Header';
+import Navbar from './Navbar';
 
 class SavedList extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.showme = this.showme.bind(this);
-    }
-
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchData(this.props.userId);
     }
 
-    showme() {
-        console.log('showing', this.props.savedData);
-    }
-
     renderSaved() {
-        return _.map(this.props.savedData, (data, key) => {
-            return <SavedItem key={key} data={data}/>;
-        });
+        const videoList = _.map(this.props.savedData, (data, key) => {
+                return <SavedItem key={key} data={data}/>;
+            });
+
+        if(!_.isEmpty(videoList)) {
+            return videoList;
+        }
+        return (
+            <div className="section">
+                <h1 className="title is-4">You have no videos saved.</h1>
+            </div>
+        )
+
     }
 
     render() {
         return (
             <>
-            <h1>hi from saved list</h1>
-            <button className="button" onClick={this.showme}>showme</button>
-
+            <Header/>
+            <Navbar/>
             {this.renderSaved()}
             </>
         )

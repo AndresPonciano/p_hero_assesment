@@ -10,14 +10,13 @@ class SavedItem extends React.Component {
         // this.setState({data: this.props.data})
         return (
             <div>
-                <h1>{data.id.videoId}</h1>
-                 <div className="box" key={data.id.videoId}>
-               <div className="media-left" key={data.id.videoId}>
-                 <figure className="is-64x64">
-                   <img src={data.snippet.thumbnails.default.url} alt="thumbnail"></img>
-                 </figure>
+                <div className="box" key={data.id.videoId}>
+                    <div className="media-left" key={data.id.videoId}>
+                        <figure className="is-64x64">
+                            <img src={data.snippet.thumbnails.default.url} alt="thumbnail"></img>
+                        </figure>
                </div>
-                 <Link to={{
+                <Link to={{
                   pathname: `${data.snippet.title}`,
                   state: {
                     video: {data},
@@ -27,7 +26,7 @@ class SavedItem extends React.Component {
                 </Link>
                 <h1 className="subtitle">{data.snippet.channelTitle}</h1>
                 <h1 className="subtitle">{data.snippet.description}</h1>                
-            </div>
+                </div>
             </div>
         );
     }

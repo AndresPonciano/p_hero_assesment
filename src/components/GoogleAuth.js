@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signIn, signOut } from '../actions';
+import { Link } from 'react-router-dom';
 
 
 class GoogleAuth extends React.Component {
@@ -42,9 +43,11 @@ class GoogleAuth extends React.Component {
         }
         else if (this.props.isSignedIn) {
             return (
+                <Link to="/">
                 <button onClick={this.onSignOutClick} className="button">
                     Signout
                 </button>
+                </Link>
             )
         }
         else {

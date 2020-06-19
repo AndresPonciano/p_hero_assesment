@@ -6,9 +6,6 @@ import Navbar from './Navbar';
 class videoPlayer extends React.Component {
 
     render() {
-
-        console.log('in videoplayer', this.props.location.state.video.data);
-
         return(
             <>
                 <Header/>

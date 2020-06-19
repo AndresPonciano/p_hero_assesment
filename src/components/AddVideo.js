@@ -10,16 +10,11 @@ class AddVideo extends React.Component {
     }
 
     addToList() {
-        console.log('trying to add to database');
-        console.log(this.props.userId);
         addData(this.props.userId, this.props.videoData);
     }
 
 
     render() {
-
-        console.log('in addvideo', this.props.videoData);
-        console.log('in addvideo', this.props.userId);
 
         return (
             <>

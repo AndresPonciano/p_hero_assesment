@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import SavedItem from './SavedItem';
 
 class SearchList extends Component {
@@ -8,23 +7,6 @@ class SearchList extends Component {
     renderVideo(videoData) {
         return(
           <SavedItem key={videoData.id.videoId} data={videoData}/>
-            // <div className="box" key={videoData.id.videoId}>
-            //   <div className="media-left" key={videoData.id.videoId}>
-            //     <figure className="is-64x64">
-            //       <img src={videoData.snippet.thumbnails.default.url} alt="thumbnail"></img>
-            //     </figure>
-            //   </div>
-            //     <Link to={{
-            //       pathname: `${videoData.snippet.title}`,
-            //       state: {
-            //         video: {videoData},
-            //       }
-            //     }}>
-            //       <h1 className="title">{videoData.snippet.title}</h1>
-            //     </Link>
-            //     <h1 className="subtitle">{videoData.snippet.channelTitle}</h1>
-            //     <h1 className="subtitle">{videoData.snippet.description}</h1>                
-            // </div>
         )
     }
 
