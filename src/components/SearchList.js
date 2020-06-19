@@ -38,6 +38,7 @@ class SearchList extends Component {
     }
 }
 
+//getting videos from index reducer
 function mapStateToProps( {videos} ) {
     return { videos };
 }

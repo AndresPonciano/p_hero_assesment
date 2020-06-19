@@ -30,7 +30,7 @@ class AddVideo extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return { userId: state.auth.userId}
+    return { userId: state.auth.userId }
 }
 
 export default connect(

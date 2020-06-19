@@ -9,5 +9,5 @@ export default combineReducers({
     auth: authReducer,
     time: timeReducer,
     videos: videoReducer,
-    data: dataReducer,
+    data: dataReducer
 });

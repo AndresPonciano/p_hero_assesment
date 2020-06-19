@@ -73,3 +73,4 @@ issues found:
     i get key prop must be unique warning even though I have a key prop
     signout on video player wont take back to default home page
     some styling is probably not responsive for different screens
+    duplicates can be added to database

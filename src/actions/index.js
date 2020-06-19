@@ -38,11 +38,11 @@ export const addData = (user, newData) =>  {
     databaseRef.child(user).push().set(newData);
 }
 
-export const fetchData = () => {
-    databaseRef.on("value", snapshot => {
-        return {
-            type: 'FETCH_DATA',
-            payload: snapshot.val()
-        }
-    })
+//fetching data for given user's saved videos
+export const fetchData = (userId) => {
+    return dispatch => {
+        databaseRef.child(userId).on("value", snapshot => {
+            dispatch ({ type: 'FETCH_DATA', payload: snapshot.val()})
+        })
+    }
 }
