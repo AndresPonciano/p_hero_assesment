@@ -11,6 +11,7 @@ class AddVideo extends React.Component {
 
     addToList() {
         console.log('trying to add to database');
+        console.log(this.props.userId);
         addData(this.props.userId, this.props.videoData);
     }
 
@@ -22,7 +23,7 @@ class AddVideo extends React.Component {
 
         return (
             <>
-                <button className="button is-info" onClick={this.addToList}>Save Video</button>
+                <button className="button is-danger" style={{marginLeft: 450}} onClick={this.addToList}>Save Video</button>
             </>
         )
     }
@@ -35,6 +36,3 @@ const mapStateToProps = (state) => {
 export default connect(
     mapStateToProps, { addData }
 )(AddVideo);
-// 
-// 
-// export default AddVideo;

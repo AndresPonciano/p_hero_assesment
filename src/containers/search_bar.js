@@ -31,13 +31,14 @@ class SearchBar extends Component {
         return (
             <>
                 <form onSubmit={this.onFormSubmit}>
-                <input className="input is-danger is-rounded" 
+                <input className="input is-danger is-inline mt-3 ml-2" 
+                    size="50"
                     onChange={this.onInputChange}
                     value={this.state.searchFor} 
                     type="text" 
                     placeholder="search"
                 />
-                <button className="button is-danger">Search</button>
+                <button className="button is-danger mt-3 ml-2">Search</button>
                 </form>
             </>
         )
